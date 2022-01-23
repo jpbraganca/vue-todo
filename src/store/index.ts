@@ -18,6 +18,10 @@ export default new Vuex.Store({
         });
       }
     },
+
+    removeTask(state, id: number) {
+      state.tarefas = state.tarefas.filter((tarefa) => tarefa.id !== id);
+    },
   },
   actions: {
   },

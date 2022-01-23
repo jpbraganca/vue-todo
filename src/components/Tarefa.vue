@@ -15,15 +15,28 @@
             >{{ tarefa.titulo }}</v-list-item-title
           >
         </v-list-item-content>
+        <v-list-item-action>
+          <v-btn icon @click.stop="handleRemoveTask(tarefa.id)">
+            <v-icon color="red lighten-3">mdi-trash-can</v-icon>
+          </v-btn>
+        </v-list-item-action>
       </template>
     </v-list-item>
+    <v-divider></v-divider>
   </div>
 </template>
 
-<script>
-export default {
+<script lang="ts">
+import Vue from 'vue';
+
+export default Vue.extend({
   props: ['tarefa'],
-};
+  methods: {
+    handleRemoveTask(id: number): void{
+      this.$store.commit('removeTask', id);
+    },
+  },
+});
 </script>
 
 <style>
