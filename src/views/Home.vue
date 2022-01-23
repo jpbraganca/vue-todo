@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-col cols="12" sm="6" md="3">
+    <v-col cols="12">
       <v-text-field
         v-model="inputField"
         label="Outlined"
