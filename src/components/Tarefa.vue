@@ -16,9 +16,10 @@
           >
         </v-list-item-content>
         <v-list-item-action>
-          <v-btn icon @click.stop="handleRemoveTask(tarefa.id)">
+          <!-- <v-btn icon @click.stop="handleRemoveTask(tarefa.id)">
             <v-icon color="red lighten-3">mdi-trash-can</v-icon>
-          </v-btn>
+          </v-btn> -->
+          <TaskMenu />
         </v-list-item-action>
       </template>
     </v-list-item>
@@ -28,14 +29,11 @@
 
 <script lang="ts">
 import Vue from 'vue';
+import TaskMenu from './TarefaMenu.vue';
 
 export default Vue.extend({
+  components: { TaskMenu },
   props: ['tarefa'],
-  methods: {
-    handleRemoveTask(id: number): void{
-      this.$store.commit('removeTask', id);
-    },
-  },
 });
 </script>
 
