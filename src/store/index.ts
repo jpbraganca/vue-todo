@@ -22,6 +22,11 @@ export default new Vuex.Store({
     removeTask(state, id: number) {
       state.tarefas = state.tarefas.filter((tarefa) => tarefa.id !== id);
     },
+
+    editTask(state, newTask: Tarefa) {
+      const task = state.tarefas.filter((tarefa) => tarefa.id === newTask.id)[0];
+      task.titulo = newTask.titulo;
+    },
   },
   actions: {
   },

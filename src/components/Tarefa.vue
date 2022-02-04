@@ -16,10 +16,7 @@
           >
         </v-list-item-content>
         <v-list-item-action>
-          <!-- <v-btn icon @click.stop="handleRemoveTask(tarefa.id)">
-            <v-icon color="red lighten-3">mdi-trash-can</v-icon>
-          </v-btn> -->
-          <TaskMenu />
+          <TaskMenu :tarefa="tarefa"/>
         </v-list-item-action>
       </template>
     </v-list-item>
